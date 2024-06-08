@@ -1,0 +1,28 @@
+<mat-card>
+    <app-pdf-generation></app-pdf-generation>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone Number</th>
+                <th>Address</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+                @for (user of dataSource; track $index) {
+                    <tr>
+                        <td>{{ user.name }}</td>
+                        <td>{{ user.email }}</td>
+                        <td>{{ user.phoneNumber }}</td>
+                        <td>{{ user.address }}</td>
+                        <td>
+                            <button mat-flat-button color="accent" style="margin-right: 5px;" (click)="editUser(user._id)">Edit</button>
+                            <button mat-flat-button color="warn" (click)="deleteUser(user._id)">Delete</button>        
+                        </td>
+                    </tr>
+                }
+        </tbody>
+    </table>
+</mat-card>

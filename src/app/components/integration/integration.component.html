@@ -1,0 +1,4 @@
+<div class="container">
+    <app-form (userAddEditFlag)="handleFormSubmit($any($event))" [userId]="apiServ.editUserId()"></app-form>
+    <app-table [dataSource]="tableData" ></app-table>
+</div>
